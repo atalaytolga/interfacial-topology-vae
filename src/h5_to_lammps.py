@@ -58,8 +58,7 @@ def write_positions_lammps(f_out, particle_dict, time_step, box_edges):
         f_out.write(f"{i+1} 1 {pos[0]:.6f} {pos[1]:.6f} {pos[2]:.6f}\n")
 
 def traj_count(f_in):
-        dataset = np.array(f_in["/particles/fluid/position/value"])
-        return dataset.shape[0]
+    return f_in["/particles/fluid/position/value"].shape[0]
 
 
 def main():
