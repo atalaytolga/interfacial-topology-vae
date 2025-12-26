@@ -48,10 +48,10 @@ def write_positions_lammps(f_out, particle_dict, time_step, box_edges):
     f_out.write(f"{time_step}\n")
     f_out.write("ITEM: NUMBER OF ATOMS\n")
     f_out.write(f"{particle_dict['num_atoms']}\n")
-    f_out.write("ITEM: BOX BOUNDS pp pp pp\n")
-    f_out.write(f"{xlo:.6f} {xhi:.6f}\n")
-    f_out.write(f"{ylo:.6f} {yhi:.6f}\n")
-    f_out.write(f"{zlo:.6f} {zhi:.6f}\n")
+    f_out.write("ITEM: BOX BOUNDS xy xz yz pp pp pp\n")
+    f_out.write(f"{xlo:.6f} {xhi:.6f} 0.0\n")
+    f_out.write(f"{ylo:.6f} {yhi:.6f} 0.0\n")
+    f_out.write(f"{zlo:.6f} {zhi:.6f} 0.0\n")
     f_out.write("ITEM: ATOMS id type x y z\n")
 
     for i, pos in enumerate(particle_dict["positions"]):
