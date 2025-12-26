@@ -57,7 +57,7 @@ def main():
             simulation file and write in XYZ format")
     #Required Arguments:
     parser.add_argument("--input", required=True, help="H5 input path to read positions from")
-    parser.add_argument("--output", requrired=True, help="XYZ output path")
+    parser.add_argument("--output", required=True, help="XYZ output path")
 
     #Optional Arguments:
     parser.add_argument("--range", type=int, nargs=2, default=[0, -1], help="Range of simulation snapshots to read")
