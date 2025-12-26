@@ -15,7 +15,8 @@ def wrap_pbc(positions, box_edges):
     return ((positions + L/2) % L) - L/2
 
 def read_positions(f_in, time_step, box):
-    dataset = np.array(f_in["/particles/fluid/position/value"])
+    dataset = f_in["/particles/fluid/position/value"]
+
     if time_step >= dataset.shape[0]:
         print(f"Warning: Time Step {time_step} is out of bounds.")
         return None
@@ -59,7 +60,7 @@ def main():
         total_frames = traj_count(f_in)
 
         start_frame, end_frame = args.range
-        if end_frame == 1:
+        if end_frame == -1:
             end_frame = total_frames
 
         box = read_box_edges(f_in)
