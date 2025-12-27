@@ -1,0 +1,9 @@
+data/raw
+data/processed
+data/models/*
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+.DS_Store
+.vscode/
